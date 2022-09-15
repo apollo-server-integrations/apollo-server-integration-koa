@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.0.7
+
+### Patch Changes
+
+- [`69ac68f`](https://github.com/greensidetech/apollo-server-integration-koa/commit/69ac68f4d86be8a1c629ac777c1f13509cccd7a4) Thanks [@matthew-gordon](https://github.com/matthew-gordon)! - Update LICENSE
+
 ## 0.0.6
 
 ### Patch Changes
