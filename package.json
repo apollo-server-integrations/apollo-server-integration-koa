@@ -1,6 +1,5 @@
 {
   "name": "@greenside/apollo-server-integration-koa",
-  "private": true,
   "description": "Apollo server integration for koa framework",
   "version": "0.0.0",
   "author": "Greenside Tech <oss@greenside.tech>",
