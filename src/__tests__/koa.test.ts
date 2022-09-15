@@ -8,7 +8,7 @@ it('gives helpful error if body-parser middleware is not installed', async () =>
   await server.start();
   const app = new koa();
 
-  // Note lack of `json` here.
+  // Note lack of `bodyParser` here.
   app.use(koaMiddleware(server));
 
   await request(app.callback())
@@ -21,6 +21,6 @@ it('gives helpful error if body-parser middleware is not installed', async () =>
 it('not calling start causes a clear error', async () => {
   const server = new ApolloServer({ typeDefs: 'type Query {f: ID}' });
   expect(() => koaMiddleware(server)).toThrow(
-    'You must `await server.start()`'
+    'You must `await server.start()`',
   );
 });

@@ -7,6 +7,10 @@ import type {
 } from '@apollo/server';
 import { parse } from 'url';
 import type Koa from 'koa';
+// we need the extended `Request` type from `koa-bodyparser`,
+// this is similar to an effectful import but for types, since
+// the `koa-bodyparser` types "polyfill" the `koa` types
+import type * as _ from 'koa-bodyparser';
 
 export interface KoaContextFunctionArgument {
   ctx: Koa.Context;
