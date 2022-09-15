@@ -1,17 +1,17 @@
 {
-  "name": "@apollo/typescript-repo-template",
+  "name": "@greenside/typescript-repo-template",
   "private": true,
-  "description": "A template for TypeScript projects with pre-configured tooling",
+  "description": "Apollo server integration for koa framework",
   "version": "0.0.0",
-  "author": "Apollo <packages@apollographql.com>",
+  "author": "Greenside Tech <oss@greenside.tech>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/apollographql/typescript-repo-template"
+    "url": "https://github.com/greensidetech/apollo-server-integration-koa"
   },
-  "homepage": "https://github.com/apollographql/typescript-repo-template#readme",
+  "homepage": "https://github.com/greensidetech/apollo-server-integration-koa#readme",
   "bugs": {
-    "url": "https://github.com/apollographql/typescript-repo-template/issues"
+    "url": "https://github.com/greensidetech/apollo-server-integration-koa/issues"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
