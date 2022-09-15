@@ -31,8 +31,8 @@
     "watch": "tsc --build --watch"
   },
   "devDependencies": {
-    "@apollo/server": "^4.0.0-alpha.11",
-    "@apollo/server-integration-testsuite": "^4.0.0-alpha.11",
+    "@apollo/server": "4.0.0-alpha.11",
+    "@apollo/server-integration-testsuite": "4.0.0-alpha.11",
     "@changesets/changelog-github": "0.4.6",
     "@changesets/cli": "2.24.4",
     "@koa/cors": "^3.4.1",
