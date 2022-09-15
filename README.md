@@ -15,13 +15,15 @@ npm install @apollo/server graphql koa @koa/cors koa-bodyparser
 Then, write the following to server.mjs. (By using the .mjs extension, Node lets you use the await keyword at the top level.)
 
 ```js
-import http from 'http';
-import { ApolloServer } from '@apollo/server';
-import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer'
-import { koaMiddleware } from '@greenside/apollo-server-integration-koa';
-import Koa from 'koa';
-import cors from '@koa/cors';
-import bodyParser from 'koa-bodyparser';
+const http = require('http');
+const Koa = require('koa');
+const bodyParser = require('koa-bodyparser');
+const cors = require('@koa/cors');
+const { ApolloServer } = require('@apollo/server');
+const {
+  ApolloServerPluginDrainHttpServer,
+} = require('@apollo/server/plugin/drainHttpServer');
+const { koaMiddleware } = require('@greenside/apollo-server-integration-koa');
 
 // The GraphQL schema
 const typeDefs = `#graphql
@@ -37,33 +39,33 @@ const resolvers = {
   },
 };
 
-const app = new Koa();
-const httpServer = http.createServer(app.callback());
+async function startApolloServer() {
+  const app = new Koa();
+  const httpServer = http.createServer(app.callback());
+  const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+    plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
+  });
+  await server.start();
+  app.use(cors());
+  app.use(bodyParser());
+  app.use(
+    koaMiddleware(server, {
+      context: async ({ ctx }) => ({ token: ctx.headers.token }),
+    })
+  );
+  await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
+  console.log(`🚀 Server ready at http://localhost:4000`);
+}
 
-// Set up Apollo Server
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
-});
-await server.start();
-
-app.use(cors());
-app.use(bodyParser());
-app.use(
-  koaMiddleware(server, {
-    context: async ({ ctx }) => ({ token: ctx.headers.token }),
-  })
-);
-
-await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
-console.log(`🚀 Server ready at http://localhost:4000`);
+startApolloServer();
 ```
 
 Now run your server with:
 
 ```
-node server.mjs
+node server.js
 ```
 
 Open the URL it prints in a web browser. It will show Apollo Sandbox, a web-based tool for running GraphQL operations. Try running the operation `query { hello }`!
