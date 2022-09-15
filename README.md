@@ -12,7 +12,7 @@ First, install Apollo Server, the JavaScript implementation of the core GraphQL 
 npm install @apollo/server graphql koa @koa/cors koa-bodyparser
 ```
 
-Then, write the following to server.mjs. (By using the .mjs extension, Node lets you use the await keyword at the top level.)
+Then, write the following to server.js.
 
 ```js
 const http = require('http');
