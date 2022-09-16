@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.0.8
+
+### Patch Changes
+
+- [#8](https://github.com/greensidetech/apollo-server-integration-koa/pull/8) [`51fcd01`](https://github.com/greensidetech/apollo-server-integration-koa/commit/51fcd01923b785d1dd707a994c705f645e20efaf) Thanks [@matthew-gordon](https://github.com/matthew-gordon)! - Update build scripts for better DX
+
 ## 0.0.7
 
 ### Patch Changes
