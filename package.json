@@ -1,7 +1,7 @@
 {
   "name": "@greenside/apollo-server-integration-koa",
   "description": "Apollo server integration for koa framework",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "author": "Greenside Tech <oss@greenside.tech>",
   "license": "MIT",
   "repository": {
