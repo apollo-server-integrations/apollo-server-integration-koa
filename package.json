@@ -8,6 +8,13 @@
     "type": "git",
     "url": "https://github.com/greensidetech/apollo-server-integration-koa"
   },
+  "keywords": [
+    "GraphQL",
+    "Apollo",
+    "Server",
+    "Koa",
+    "Javascript"
+  ],
   "homepage": "https://github.com/greensidetech/apollo-server-integration-koa#readme",
   "bugs": {
     "url": "https://github.com/greensidetech/apollo-server-integration-koa/issues"
