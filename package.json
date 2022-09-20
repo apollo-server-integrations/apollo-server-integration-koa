@@ -2,7 +2,7 @@
   "name": "@as-integrations/koa",
   "description": "Apollo server integration for koa framework",
   "version": "0.0.11",
-  "author": "Matt Gordon",
+  "author": "Matt Gordon <matt@greenside.tech>",
   "license": "MIT",
   "repository": {
     "type": "git",
