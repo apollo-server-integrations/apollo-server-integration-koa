@@ -1,12 +1,12 @@
 {
-  "name": "@greenside/apollo-server-integration-koa",
+  "name": "@as-integrations/koa",
   "description": "Apollo server integration for koa framework",
   "version": "0.0.11",
-  "author": "Greenside Tech <oss@greenside.tech>",
+  "author": "Matt Gordon",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/greensidetech/apollo-server-integration-koa"
+    "url": "https://github.com/apollo-server-integrations/apollo-server-integration-koa"
   },
   "keywords": [
     "GraphQL",
@@ -15,9 +15,9 @@
     "Koa",
     "Javascript"
   ],
-  "homepage": "https://github.com/greensidetech/apollo-server-integration-koa#readme",
+  "homepage": "https://github.com/apollo-server-integrations/apollo-server-integration-koa#readme",
   "bugs": {
-    "url": "https://github.com/greensidetech/apollo-server-integration-koa/issues"
+    "url": "https://github.com/apollo-server-integrations/apollo-server-integration-koa/issues"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
