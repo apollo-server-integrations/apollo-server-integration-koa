@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.0.11
+
+### Patch Changes
+
+- [#15](https://github.com/greensidetech/apollo-server-integration-koa/pull/15) [`a192085`](https://github.com/greensidetech/apollo-server-integration-koa/commit/a1920855fecd5a0bb1afc0961a86123c960e0508) Thanks [@matthew-gordon](https://github.com/matthew-gordon)! - Update keywords
+
 ## 0.0.10
 
 ### Patch Changes
