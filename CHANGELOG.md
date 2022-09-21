@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.0.12
+
+### Patch Changes
+
+- [#17](https://github.com/apollo-server-integrations/apollo-server-integration-koa/pull/17) [`0aef5c3`](https://github.com/apollo-server-integrations/apollo-server-integration-koa/commit/0aef5c3d83d9f9495a785b350712c4703b9257b4) Thanks [@matthew-gordon](https://github.com/matthew-gordon)! - Update repository docs/ownership
+
 ## 0.0.11
 
 ### Patch Changes
