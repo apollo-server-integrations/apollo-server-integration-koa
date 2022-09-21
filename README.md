@@ -1,4 +1,4 @@
-# `@greenside/apollo-server-integration-koa`
+# `@as-integrations/koa`
 
 ## A TypeScript/JavaScript GraphQL middleware for `@apollo/server`
 
@@ -21,7 +21,7 @@ import bodyParser from "koa-bodyparser";
 import cors from "@koa/cors";
 import { ApolloServer } from "@apollo/server";
 import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHttpServer";
-import { koaMiddleware } from "@greenside/apollo-server-integration-koa";
+import { koaMiddleware } from "@as-integrations/koa";
 
 // The GraphQL schema
 const typeDefs = `#graphql

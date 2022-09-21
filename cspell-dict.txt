@@ -6,7 +6,6 @@ circleci
 codesandbox
 direnv
 opde
-greenside
 bodyparser
 testsuite
 withrequired
