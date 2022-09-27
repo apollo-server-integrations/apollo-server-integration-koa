@@ -8,14 +8,13 @@ const config: Config.InitialOptions = {
     '^.+\\.test.ts$': [
       'ts-jest',
       {
-        useESM: true,
         tsconfig: '<rootDir>/tsconfig.test.json',
-        diagnostics: true,
       },
     ],
   },
   testRegex: '/__tests__/.*.test.ts$',
   verbose: true,
+  snapshotFormat: { escapeString: false, printBasicPrototype: false },
 };
 
 export default config;
