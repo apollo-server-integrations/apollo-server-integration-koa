@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
-    "composite": true,
-    "esModuleInterop": true
+    "composite": true
   },
   "files": [],
   "include": [],
