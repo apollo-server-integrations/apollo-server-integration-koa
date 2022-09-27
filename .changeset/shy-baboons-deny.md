@@ -2,4 +2,4 @@
 '@as-integrations/koa': minor
 ---
 
-Update dependencies, add support for incremental delivery"
+Update Apollo Server dependencies, add explicit non-support for incremental delivery for now"
