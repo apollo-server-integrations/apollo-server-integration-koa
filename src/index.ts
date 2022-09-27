@@ -81,27 +81,23 @@ export function koaMiddleware<TContext extends BaseContext>(
     };
 
     try {
-      const httpGraphQLResponse = await server.executeHTTPGraphQLRequest({
+      const { body, headers, status } = await server.executeHTTPGraphQLRequest({
         httpGraphQLRequest,
         context: () => context({ ctx }),
       });
 
-      for (const [key, value] of httpGraphQLResponse.headers) {
+      for (const [key, value] of headers) {
         ctx.set(key, value);
       }
 
-      ctx.status = httpGraphQLResponse.status || 200;
+      ctx.status = status || 200;
 
-      if (httpGraphQLResponse.body.kind === 'complete') {
-        ctx.body = httpGraphQLResponse.body.string;
+      if (body.kind === 'complete') {
+        ctx.body = body.string;
         return;
       }
 
-      for await (const chunk of httpGraphQLResponse.body.asyncIterator) {
-        ctx.res.write(chunk);
-      }
-
-      ctx.res.end();
+      throw Error('Incremental delivery not implemented');
     } catch {
       await next();
     }
