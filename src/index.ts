@@ -80,6 +80,8 @@ export function koaMiddleware<TContext extends BaseContext>(
       body: ctx.request.body,
     };
 
+    Object.entries(Object.fromEntries(headers));
+
     try {
       const { body, headers, status } = await server.executeHTTPGraphQLRequest({
         httpGraphQLRequest,
