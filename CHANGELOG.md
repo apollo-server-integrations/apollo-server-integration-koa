@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.1.0
+
+### Minor Changes
+
+- [#19](https://github.com/apollo-server-integrations/apollo-server-integration-koa/pull/19) [`61106d1`](https://github.com/apollo-server-integrations/apollo-server-integration-koa/commit/61106d1ed4f7a0e3f94feb117ed69c4ca86efe5d) Thanks [@matthew-gordon](https://github.com/matthew-gordon)! - Update Apollo Server dependencies, add explicit non-support for incremental delivery for now"
+
 ## 0.0.12
 
 ### Patch Changes
