@@ -43,7 +43,7 @@
     "@apollo/server-integration-testsuite": "4.0.0-alpha.13",
     "@changesets/changelog-github": "0.4.7",
     "@changesets/cli": "2.25.0",
-    "@koa/cors": "3.4.1",
+    "@koa/cors": "4.0.0",
     "@types/jest": "28.1.8",
     "@types/koa": "2.13.5",
     "@types/koa-bodyparser": "4.3.8",
