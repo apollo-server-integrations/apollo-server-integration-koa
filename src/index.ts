@@ -97,9 +97,15 @@ export function koaMiddleware<TContext extends BaseContext>(
       if (body.kind === 'complete') {
         ctx.body = body.string;
         return;
+      } else if (body.kind === 'chunked') {
+        for await (const chunk of body.asyncIterator) {
+          ctx.response.res.write(chunk);
+        }
+        // ctx.respond = false;
+        ctx.response.res.end();
       }
 
-      throw Error('Incremental delivery not implemented');
+      return;
     } catch {
       await next();
     }
