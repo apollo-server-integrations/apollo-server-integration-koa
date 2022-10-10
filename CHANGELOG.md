@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.2.0
+
+### Minor Changes
+
+- [#26](https://github.com/apollo-server-integrations/apollo-server-integration-koa/pull/26) [`a284fe2`](https://github.com/apollo-server-integrations/apollo-server-integration-koa/commit/a284fe2bab5da9fad13d8cf5d4cb5a011443fe15) Thanks [@renovate](https://github.com/apps/renovate)! - Officially support Apollo Server v4.0.0
+
 ## 0.1.0
 
 ### Minor Changes
