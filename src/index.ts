@@ -101,7 +101,6 @@ export function koaMiddleware<TContext extends BaseContext>(
         for await (const chunk of body.asyncIterator) {
           ctx.response.res.write(chunk);
         }
-        // ctx.respond = false;
         ctx.response.res.end();
       }
 
