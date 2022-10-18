@@ -39,8 +39,8 @@
     "watch": "tsc --build --watch"
   },
   "devDependencies": {
-    "@apollo/server": "4.0.1",
-    "@apollo/server-integration-testsuite": "4.0.1",
+    "@apollo/server": "https://pkg.csb.dev/apollographql/apollo-server/commit/12bf6ac7/@apollo/server",
+    "@apollo/server-integration-testsuite": "https://pkg.csb.dev/apollographql/apollo-server/commit/12bf6ac7/@apollo/server-integration-testsuite",
     "@changesets/changelog-github": "0.4.7",
     "@changesets/cli": "2.25.0",
     "@koa/cors": "4.0.0",
@@ -63,7 +63,7 @@
     "typescript": "4.8.4"
   },
   "peerDependencies": {
-    "@apollo/server": "^4.0.0",
+    "@apollo/server": "https://pkg.csb.dev/apollographql/apollo-server/commit/12bf6ac7/@apollo/server",
     "koa": "^2.0.0"
   },
   "volta": {
