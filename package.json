@@ -44,7 +44,7 @@
     "@changesets/changelog-github": "0.4.7",
     "@changesets/cli": "2.25.0",
     "@koa/cors": "4.0.0",
-    "@types/jest": "29.1.2",
+    "@types/jest": "29.2.0",
     "@types/koa": "2.13.5",
     "@types/koa-bodyparser": "4.3.8",
     "@types/koa__cors": "3.3.0",
