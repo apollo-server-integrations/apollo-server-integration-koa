@@ -42,7 +42,7 @@
     "@apollo/server": "4.0.4",
     "@apollo/server-integration-testsuite": "4.0.4",
     "@changesets/changelog-github": "0.4.7",
-    "@changesets/cli": "2.25.0",
+    "@changesets/cli": "2.25.1",
     "@koa/cors": "4.0.0",
     "@types/jest": "29.2.0",
     "@types/koa": "2.13.5",
