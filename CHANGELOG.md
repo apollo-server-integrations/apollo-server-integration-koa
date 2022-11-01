@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.2.1
+
+### Patch Changes
+
+- [#43](https://github.com/apollo-server-integrations/apollo-server-integration-koa/pull/43) [`997b160`](https://github.com/apollo-server-integrations/apollo-server-integration-koa/commit/997b160c888f970b3f39abdfd01fb95f83d3fa57) Thanks [@trevor-scheer](https://github.com/trevor-scheer)! - Remove effectful install
+
 ## 0.2.0
 
 ### Minor Changes
