@@ -1,5 +1,5 @@
 {
   "installCommand": "install-with-npm-8.5",
   "sandboxes": ["apollo-server-koa-js", "apollo-server-koa-ts"],
-  "node": "17"
+  "node": "16.16.0"
 }
