@@ -9,7 +9,7 @@ Apollo Server enables the ability to add middleware that lets you run your Graph
 First, install Apollo Server, the JavaScript implementation of the core GraphQL algorithms, Koa, and two common Koa middleware packages:
 
 ```
-npm install @apollo/server graphql koa @koa/cors koa-bodyparser
+npm install @as-integrations/koa @apollo/server graphql koa @koa/cors koa-bodyparser
 ```
 
 Then, write the following to server.mjs. (By using the .mjs extension, Node lets you use the await keyword at the top level.)
