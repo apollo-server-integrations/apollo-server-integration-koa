@@ -38,8 +38,8 @@
     "watch": "tsc --build --watch"
   },
   "devDependencies": {
-    "@apollo/server": "4.1.1",
-    "@apollo/server-integration-testsuite": "4.1.1",
+    "@apollo/server": "4.2.0",
+    "@apollo/server-integration-testsuite": "4.2.0",
     "@changesets/changelog-github": "0.4.7",
     "@changesets/cli": "2.25.2",
     "@koa/cors": "4.0.0",
@@ -55,7 +55,7 @@
     "jest-junit": "14.0.1",
     "koa": "2.13.4",
     "koa-bodyparser": "4.3.0",
-    "prettier": "2.7.1",
+    "prettier": "2.8.0",
     "supertest": "6.3.1",
     "ts-jest": "29.0.3",
     "ts-node": "10.9.1",
