@@ -49,7 +49,7 @@
     "@types/koa__cors": "3.3.0",
     "@types/node": "14.18.33",
     "@types/supertest": "2.0.12",
-    "cspell": "6.14.3",
+    "cspell": "6.15.0",
     "graphql": "16.6.0",
     "jest": "29.3.1",
     "jest-junit": "14.0.1",
