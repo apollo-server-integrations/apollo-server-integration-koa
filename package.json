@@ -40,8 +40,8 @@
   "devDependencies": {
     "@apollo/server": "4.3.0",
     "@apollo/server-integration-testsuite": "4.3.0",
-    "@changesets/changelog-github": "0.4.7",
-    "@changesets/cli": "2.25.2",
+    "@changesets/changelog-github": "0.4.8",
+    "@changesets/cli": "2.26.0",
     "@koa/cors": "4.0.0",
     "@types/jest": "29.2.4",
     "@types/koa": "2.13.5",
