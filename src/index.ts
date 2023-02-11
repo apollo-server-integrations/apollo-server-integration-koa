@@ -1,7 +1,6 @@
 import { Readable } from 'node:stream';
 import { parse } from 'node:url';
 import type { WithRequired } from '@apollo/utils.withrequired';
-import type { HTTPGraphQLResponseBody } from '@apollo/server/dist/esm/externalTypes/http';
 import type {
   ApolloServer,
   BaseContext,
@@ -59,22 +58,21 @@ export function koaMiddleware<TContext extends BaseContext>(
       return;
     }
 
-    const incomingHeaders = new Map(function*() {
-      for (const [ key, value ] of Object.entries(ctx.headers)) {
-        if (value !== undefined) {
-          // Node/Koa headers can be an array or a single value. We join
-          // multi-valued headers with `, ` just like the Fetch API's `Headers`
-          // does. We assume that keys are already lower-cased (as per the Node
-          // docs on IncomingMessage.headers) and so we don't bother to lower-case
-          // them or combine across multiple keys that would lower-case to the
-          // same value.
-          yield [
-            key,
-            Array.isArray(value) ? value.join(', ') : value,
-          ];
-        }
+    const incomingHeaders = new Map<string, string>();
+    for (const [key, value] of Object.entries(ctx.headers)) {
+      if (value !== undefined) {
+        // Node/Koa headers can be an array or a single value. We join
+        // multi-valued headers with `, ` just like the Fetch API's `Headers`
+        // does. We assume that keys are already lower-cased (as per the Node
+        // docs on IncomingMessage.headers) and so we don't bother to lower-case
+        // them or combine across multiple keys that would lower-case to the
+        // same value.
+        incomingHeaders.set(
+          key,
+          Array.isArray(value) ? value.join(', ') : (value as string),
+        );
       }
-    }());
+    }
 
     const httpGraphQLRequest: HTTPGraphQLRequest = {
       method: ctx.method.toUpperCase(),
@@ -104,7 +102,7 @@ export function koaMiddleware<TContext extends BaseContext>(
         }
       }());
     } else {
-      throw Error(`Delivery method ${(body as HTTPGraphQLResponseBody).kind} not implemented`);
+      throw Error(`Delivery method ${(body as any).kind} not implemented`);
     }
 
     if (status !== undefined) {
