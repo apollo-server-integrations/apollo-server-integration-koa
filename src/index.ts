@@ -1,8 +1,9 @@
 import type { WithRequired } from '@apollo/utils.withrequired';
-import type {
+import {
   ApolloServer,
   BaseContext,
   ContextFunction,
+  HeaderMap,
   HTTPGraphQLRequest,
 } from '@apollo/server';
 import { parse } from 'url';
@@ -57,7 +58,7 @@ export function koaMiddleware<TContext extends BaseContext>(
       return;
     }
 
-    const headers = new Map<string, string>();
+    const headers = new HeaderMap();
     for (const [key, value] of Object.entries(ctx.headers)) {
       if (value !== undefined) {
         // Node/Koa headers can be an array or a single value. We join
