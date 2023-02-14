@@ -30,7 +30,7 @@ describe('http2', () => {
       },
       plugins: [
         ApolloServerPluginDrainHttpServer({
-          // @ts-ignore drain server currently only accepts an http.Server
+          // @ts-expect-error drain server plugin currently only accepts an http.Server
           httpServer: http2Server,
         }),
       ],
@@ -48,26 +48,15 @@ describe('http2', () => {
     const client = http2.connect(url);
     client.on('error', (err) => console.error(err));
 
-    // Not working, server sees no POST body ...is it because this is a stream
-    // and the server isn't processing it correctly? const req =
-    // client.request({ ':method': 'POST', ':path': '/', 'content-type':
-    // 'application/json',
-    // });
-    // req.write(JSON.stringify({query: '{hello}'}))
-
-    // GET works but presumably this is all happening in one part, which isn't a
-    // realistic expectation
+    const body = JSON.stringify({ query: '{hello}' });
+    const contentLength = Buffer.byteLength(body);
     const req = client.request({
-      ':method': 'GET',
-      ':path': `/?query=${encodeURIComponent('{hello}')}`,
-      'apollo-require-preflight': 't',
+      ':method': 'POST',
+      ':path': '/',
+      'content-type': 'application/json',
+      'content-length': contentLength,
     });
-
-    // req.on('response', (headers) => {
-    //   for (const name in headers) {
-    //     console.log(`${name}: ${headers[name]}`);
-    //   }
-    // });
+    req.write(body);
 
     req.setEncoding('utf8');
     let data = '';

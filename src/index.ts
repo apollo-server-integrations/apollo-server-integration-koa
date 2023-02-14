@@ -59,6 +59,24 @@ export function koaMiddleware<TContext extends BaseContext>(
       return;
     }
 
+    if (Object.keys(ctx.request.body).length === 0) {
+      let r: () => void;
+      let p = new Promise<void>((resolve) => r = resolve);
+      // empty body, is it a stream?
+      let data = '';
+      if (!ctx.req.complete) {
+        ctx.req.on('data', (chunk) => {
+          data += chunk;
+        })
+        ctx.req.on('end', () => {
+          ctx.request.body = data;
+          r();
+        });
+        await p;
+        console.log(data);
+      }
+    }
+
     const incomingHeaders = new HeaderMap();
     for (const [key, value] of Object.entries(ctx.headers)) {
       if (value !== undefined) {
