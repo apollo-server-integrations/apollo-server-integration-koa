@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 0.3.0
+
+### Minor Changes
+
+- [#85](https://github.com/apollo-server-integrations/apollo-server-integration-koa/pull/85) [`bb28b66`](https://github.com/apollo-server-integrations/apollo-server-integration-koa/commit/bb28b66c60151289e4fee51ce58443b000e06056) Thanks [@laverdet](https://github.com/laverdet)! - Implement support for the @defer directive. In order to use this feature, you must be using an appropriate version of `graphql`. At the time of writing this, @defer is only available in v17 alpha versions of the `graphql` package, which is currently not officially supported. Due to peer dependencies, you must install graphql like so in order to force v17:
+  `npm i graphql@alpha --legacy-peer-deps`
+
 ## 0.2.1
 
 ### Patch Changes
