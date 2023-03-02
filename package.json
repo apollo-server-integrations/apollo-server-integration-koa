@@ -38,8 +38,8 @@
     "watch": "tsc --build --watch"
   },
   "devDependencies": {
-    "@apollo/server": "4.4.0",
-    "@apollo/server-integration-testsuite": "4.4.0",
+    "@apollo/server": "4.4.1",
+    "@apollo/server-integration-testsuite": "4.4.1",
     "@changesets/changelog-github": "0.4.8",
     "@changesets/cli": "2.26.0",
     "@koa/cors": "4.0.0",
@@ -47,7 +47,7 @@
     "@types/koa": "2.13.5",
     "@types/koa-bodyparser": "4.3.10",
     "@types/koa__cors": "3.3.1",
-    "@types/node": "14.18.36",
+    "@types/node": "14.18.37",
     "@types/supertest": "2.0.12",
     "cspell": "6.27.0",
     "graphql": "16.6.0",
@@ -67,6 +67,6 @@
   },
   "volta": {
     "node": "18.14.2",
-    "npm": "9.5.1"
+    "npm": "9.6.0"
   }
 }
