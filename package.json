@@ -47,7 +47,7 @@
     "@types/koa": "2.13.5",
     "@types/koa-bodyparser": "4.3.10",
     "@types/koa__cors": "3.3.1",
-    "@types/node": "14.18.40",
+    "@types/node": "14.18.41",
     "@types/supertest": "2.0.12",
     "cspell": "6.31.1",
     "graphql": "16.6.0",
