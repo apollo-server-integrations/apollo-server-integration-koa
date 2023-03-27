@@ -2,12 +2,14 @@ import http from 'http';
 import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
 import cors from '@koa/cors';
-import { ApolloServer, ApolloServerOptions, BaseContext } from '@apollo/server';
-import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer';
 import {
-  defineIntegrationTestSuite,
-  CreateServerForIntegrationTestsOptions,
-} from '@apollo/server-integration-testsuite';
+  type ApolloServerOptions,
+  type BaseContext,
+  ApolloServer,
+} from '@apollo/server';
+import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer';
+import type { CreateServerForIntegrationTestsOptions } from '@apollo/server-integration-testsuite';
+import { defineIntegrationTestSuite } from '@apollo/server-integration-testsuite';
 import { koaMiddleware } from '..';
 import { urlForHttpServer } from '../utils';
 
