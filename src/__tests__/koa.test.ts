@@ -1,6 +1,7 @@
 import { ApolloServer } from '@apollo/server';
 import koa from 'koa';
 import request from 'supertest';
+import { it, expect } from '@jest/globals';
 import { koaMiddleware } from '..';
 
 it('gives helpful error if body-parser middleware is not installed', async () => {

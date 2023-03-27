@@ -69,6 +69,13 @@ jobs:
       - setup-node
       - run: npm run prettier-check
 
+  Lint:
+    docker:
+    - image: cimg/base:stable
+    steps:
+      - setup-node
+      - run: npm run lint
+
   Spell Check:
     docker:
     - image: cimg/base:stable
@@ -90,4 +97,5 @@ workflows:
                 - "18"
       - Full incremental delivery tests with graphql-js 17 canary
       - Prettier
+      - Lint
       - Spell Check

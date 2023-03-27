@@ -2,11 +2,11 @@ import { Readable } from 'node:stream';
 import { parse } from 'node:url';
 import type { WithRequired } from '@apollo/utils.withrequired';
 import {
-  ApolloServer,
-  BaseContext,
-  ContextFunction,
+  type ApolloServer,
+  type BaseContext,
+  type ContextFunction,
+  type HTTPGraphQLRequest,
   HeaderMap,
-  HTTPGraphQLRequest,
 } from '@apollo/server';
 import type Koa from 'koa';
 // we need the extended `Request` type from `koa-bodyparser`,
@@ -70,7 +70,7 @@ export function koaMiddleware<TContext extends BaseContext>(
         // same value.
         incomingHeaders.set(
           key,
-          Array.isArray(value) ? value.join(', ') : (value as string),
+          Array.isArray(value) ? value.join(', ') : (value ),
         );
       }
     }
