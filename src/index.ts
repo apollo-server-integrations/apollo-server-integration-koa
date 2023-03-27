@@ -70,7 +70,7 @@ export function koaMiddleware<TContext extends BaseContext>(
         // same value.
         incomingHeaders.set(
           key,
-          Array.isArray(value) ? value.join(', ') : (value ),
+          Array.isArray(value) ? value.join(', ') : value,
         );
       }
     }
