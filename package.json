@@ -60,7 +60,7 @@
     "jest-junit": "15.0.0",
     "koa": "2.14.2",
     "koa-bodyparser": "4.4.0",
-    "prettier": "2.8.7",
+    "prettier": "2.8.8",
     "supertest": "6.3.3",
     "ts-jest": "29.1.0",
     "ts-node": "10.9.1",
