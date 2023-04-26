@@ -92,9 +92,9 @@ workflows:
           matrix:
             parameters:
               node-version:
-                - "14"
                 - "16"
                 - "18"
+                - "20"
       - Full incremental delivery tests with graphql-js 17 canary
       - Prettier
       - Lint
