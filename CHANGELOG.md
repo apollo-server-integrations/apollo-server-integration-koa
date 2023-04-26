@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 1.0.0
+
+### Major Changes
+
+- [#117](https://github.com/apollo-server-integrations/apollo-server-integration-koa/pull/117) [`4567c98`](https://github.com/apollo-server-integrations/apollo-server-integration-koa/commit/4567c982adeaa4a201ec133f1d7afa77eddb3b93) Thanks [@trevor-scheer](https://github.com/trevor-scheer)! - Drop support for Node.js 14, require v16+
+
+  The only change required for users to take this update is to upgrade their Node.js version to v16+. No other breaking changes.
+
 ## 0.3.0
 
 ### Minor Changes
