@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Matt Gordon <matt@greenside.tech>",
   "license": "MIT",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/apollo-server-integrations/apollo-server-integration-koa"
