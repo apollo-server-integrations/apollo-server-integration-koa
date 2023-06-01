@@ -22,15 +22,26 @@ interface KoaMiddlewareOptions<TContext extends BaseContext> {
   context?: ContextFunction<[KoaContextFunctionArgument], TContext>;
 }
 
-export function koaMiddleware<StateT = Koa.DefaultState, ContextT = Koa.DefaultContext>(
+export function koaMiddleware<
+  StateT = Koa.DefaultState,
+  ContextT = Koa.DefaultContext,
+>(
   server: ApolloServer<BaseContext>,
   options?: KoaMiddlewareOptions<BaseContext>,
 ): Koa.Middleware<StateT, ContextT>;
-export function koaMiddleware<TContext extends BaseContext, StateT = Koa.DefaultState, ContextT = Koa.DefaultContext>(
+export function koaMiddleware<
+  TContext extends BaseContext,
+  StateT = Koa.DefaultState,
+  ContextT = Koa.DefaultContext,
+>(
   server: ApolloServer<TContext>,
   options: WithRequired<KoaMiddlewareOptions<TContext>, 'context'>,
 ): Koa.Middleware<StateT, ContextT>;
-export function koaMiddleware<TContext extends BaseContext, StateT = Koa.DefaultState, ContextT = Koa.DefaultContext>(
+export function koaMiddleware<
+  TContext extends BaseContext,
+  StateT = Koa.DefaultState,
+  ContextT = Koa.DefaultContext,
+>(
   server: ApolloServer<TContext>,
   options?: KoaMiddlewareOptions<TContext>,
 ): Koa.Middleware<StateT, ContextT> {
