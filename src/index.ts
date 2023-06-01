@@ -22,18 +22,18 @@ interface KoaMiddlewareOptions<TContext extends BaseContext> {
   context?: ContextFunction<[KoaContextFunctionArgument], TContext>;
 }
 
-export function koaMiddleware(
+export function koaMiddleware<StateT = Koa.DefaultState, ContextT = Koa.DefaultContext>(
   server: ApolloServer<BaseContext>,
   options?: KoaMiddlewareOptions<BaseContext>,
-): Koa.Middleware;
-export function koaMiddleware<TContext extends BaseContext>(
+): Koa.Middleware<StateT, ContextT>;
+export function koaMiddleware<TContext extends BaseContext, StateT = Koa.DefaultState, ContextT = Koa.DefaultContext>(
   server: ApolloServer<TContext>,
   options: WithRequired<KoaMiddlewareOptions<TContext>, 'context'>,
-): Koa.Middleware;
-export function koaMiddleware<TContext extends BaseContext>(
+): Koa.Middleware<StateT, ContextT>;
+export function koaMiddleware<TContext extends BaseContext, StateT = Koa.DefaultState, ContextT = Koa.DefaultContext>(
   server: ApolloServer<TContext>,
   options?: KoaMiddlewareOptions<TContext>,
-): Koa.Middleware {
+): Koa.Middleware<StateT, ContextT> {
   server.assertStarted('koaMiddleware()');
 
   // This `any` is safe because the overload above shows that context can
