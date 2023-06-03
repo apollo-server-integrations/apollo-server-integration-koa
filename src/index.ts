@@ -14,12 +14,18 @@ import type Koa from 'koa';
 // the `koa-bodyparser` types "polyfill" the `koa` types
 import type * as _ from 'koa-bodyparser';
 
-export interface KoaContextFunctionArgument {
-  ctx: Koa.Context;
+export interface KoaContextFunctionArgument<
+  StateT = Koa.DefaultState,
+  ContextT = Koa.DefaultContext,
+> {
+  ctx: Koa.ParameterizedContext<StateT, ContextT>;
 }
 
-interface KoaMiddlewareOptions<TContext extends BaseContext> {
-  context?: ContextFunction<[KoaContextFunctionArgument], TContext>;
+interface KoaMiddlewareOptions<TContext extends BaseContext, StateT, ContextT> {
+  context?: ContextFunction<
+    [KoaContextFunctionArgument<StateT, ContextT>],
+    TContext
+  >;
 }
 
 export function koaMiddleware<
@@ -27,7 +33,7 @@ export function koaMiddleware<
   ContextT = Koa.DefaultContext,
 >(
   server: ApolloServer<BaseContext>,
-  options?: KoaMiddlewareOptions<BaseContext>,
+  options?: KoaMiddlewareOptions<BaseContext, StateT, ContextT>,
 ): Koa.Middleware<StateT, ContextT>;
 export function koaMiddleware<
   TContext extends BaseContext,
@@ -35,7 +41,10 @@ export function koaMiddleware<
   ContextT = Koa.DefaultContext,
 >(
   server: ApolloServer<TContext>,
-  options: WithRequired<KoaMiddlewareOptions<TContext>, 'context'>,
+  options: WithRequired<
+    KoaMiddlewareOptions<TContext, StateT, ContextT>,
+    'context'
+  >,
 ): Koa.Middleware<StateT, ContextT>;
 export function koaMiddleware<
   TContext extends BaseContext,
@@ -43,7 +52,7 @@ export function koaMiddleware<
   ContextT = Koa.DefaultContext,
 >(
   server: ApolloServer<TContext>,
-  options?: KoaMiddlewareOptions<TContext>,
+  options?: KoaMiddlewareOptions<TContext, StateT, ContextT>,
 ): Koa.Middleware<StateT, ContextT> {
   server.assertStarted('koaMiddleware()');
 
@@ -51,12 +60,14 @@ export function koaMiddleware<
   // only be left out if you're using BaseContext as your context, and {} is a
   // valid BaseContext.
   const defaultContext: ContextFunction<
-    [KoaContextFunctionArgument],
+    [KoaContextFunctionArgument<StateT, ContextT>],
     any
   > = async () => ({});
 
-  const context: ContextFunction<[KoaContextFunctionArgument], TContext> =
-    options?.context ?? defaultContext;
+  const context: ContextFunction<
+    [KoaContextFunctionArgument<StateT, ContextT>],
+    TContext
+  > = options?.context ?? defaultContext;
 
   return async (ctx) => {
     if (!ctx.request.body) {
