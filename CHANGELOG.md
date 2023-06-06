@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 1.1.1
+
+### Patch Changes
+
+- [#132](https://github.com/apollo-server-integrations/apollo-server-integration-koa/pull/132) [`01fa9d1`](https://github.com/apollo-server-integrations/apollo-server-integration-koa/commit/01fa9d15aa8ee24ad7469d4787cf9c8407988ee5) Thanks [@ryota-ka](https://github.com/ryota-ka)! - Parameterize `KoaContextFunctionArgument` and `KoaMiddlewareOptions` so that the `ctx` parameter in the `context` function is correctly typed when this library is used along with a context-parameterized Koa app.
+
 ## 1.1.0
 
 ### Minor Changes
