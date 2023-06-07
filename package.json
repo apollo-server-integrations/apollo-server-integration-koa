@@ -38,8 +38,8 @@
     "lint": "eslint src/**/*.ts"
   },
   "devDependencies": {
-    "@apollo/server": "4.7.2",
-    "@apollo/server-integration-testsuite": "4.7.2",
+    "@apollo/server": "4.7.3",
+    "@apollo/server-integration-testsuite": "4.7.3",
     "@changesets/changelog-github": "0.4.8",
     "@changesets/cli": "2.26.1",
     "@jest/globals": "29.5.0",
@@ -71,6 +71,6 @@
   },
   "volta": {
     "node": "18.16.0",
-    "npm": "9.6.7"
+    "npm": "9.7.1"
   }
 }
