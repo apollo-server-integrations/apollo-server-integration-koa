@@ -44,7 +44,7 @@
     "@changesets/cli": "2.26.2",
     "@jest/globals": "29.6.4",
     "@koa/cors": "4.0.0",
-    "@types/jest": "29.5.4",
+    "@types/jest": "29.5.5",
     "@types/koa": "2.13.8",
     "@types/koa__cors": "4.0.0",
     "@types/koa-bodyparser": "4.3.10",
