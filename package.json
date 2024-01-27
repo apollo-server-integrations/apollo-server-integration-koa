@@ -48,10 +48,10 @@
     "@types/koa": "2.14.0",
     "@types/koa__cors": "4.0.3",
     "@types/koa-bodyparser": "4.3.12",
-    "@types/node": "16.18.74",
+    "@types/node": "16.18.76",
     "@types/supertest": "2.0.16",
-    "@typescript-eslint/eslint-plugin": "6.19.0",
-    "@typescript-eslint/parser": "6.19.0",
+    "@typescript-eslint/eslint-plugin": "6.19.1",
+    "@typescript-eslint/parser": "6.19.1",
     "cspell": "7.3.9",
     "eslint": "8.56.0",
     "graphql": "16.8.1",
@@ -61,7 +61,7 @@
     "koa-bodyparser": "4.4.1",
     "prettier": "3.2.4",
     "supertest": "6.3.4",
-    "ts-jest": "29.1.1",
+    "ts-jest": "29.1.2",
     "ts-node": "10.9.2",
     "typescript": "5.3.3"
   },
@@ -71,6 +71,6 @@
   },
   "volta": {
     "node": "20.11.0",
-    "npm": "10.3.0"
+    "npm": "10.4.0"
   }
 }
