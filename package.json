@@ -48,7 +48,7 @@
     "@types/koa": "2.14.0",
     "@types/koa__cors": "4.0.3",
     "@types/koa-bodyparser": "4.3.12",
-    "@types/node": "16.18.80",
+    "@types/node": "16.18.82",
     "@types/supertest": "2.0.16",
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.21.0",
@@ -70,7 +70,7 @@
     "koa": "^2.0.0"
   },
   "volta": {
-    "node": "20.11.0",
+    "node": "20.11.1",
     "npm": "10.4.0"
   }
 }
