@@ -38,8 +38,8 @@
     "lint": "eslint src/**/*.ts"
   },
   "devDependencies": {
-    "@apollo/server": "4.10.0",
-    "@apollo/server-integration-testsuite": "4.10.0",
+    "@apollo/server": "4.10.1",
+    "@apollo/server-integration-testsuite": "4.10.1",
     "@changesets/changelog-github": "0.5.0",
     "@changesets/cli": "2.27.1",
     "@jest/globals": "29.7.0",
