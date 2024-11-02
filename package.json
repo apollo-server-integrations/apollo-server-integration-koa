@@ -48,7 +48,7 @@
     "@types/koa": "2.15.0",
     "@types/koa__cors": "4.0.3",
     "@types/koa-bodyparser": "4.3.12",
-    "@types/node": "16.18.116",
+    "@types/node": "16.18.118",
     "@types/supertest": "2.0.16",
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.21.0",
