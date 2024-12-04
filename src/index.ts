@@ -69,7 +69,7 @@ export function koaMiddleware<
     TContext
   > = options?.context ?? defaultContext;
 
-  return async (ctx) => {
+  return async (ctx, next) => {
     if (!ctx.request.body) {
       // The json koa-bodyparser *always* sets ctx.request.body to {} if it's unset (even
       // if the Content-Type doesn't match), so if it isn't set, you probably
@@ -136,5 +136,7 @@ export function koaMiddleware<
     for (const [key, value] of headers) {
       ctx.set(key, value);
     }
+
+    return next();
   };
 }
