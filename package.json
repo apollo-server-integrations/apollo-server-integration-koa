@@ -48,7 +48,7 @@
     "@types/koa": "2.15.0",
     "@types/koa__cors": "4.0.3",
     "@types/koa-bodyparser": "4.3.12",
-    "@types/node": "16.18.119",
+    "@types/node": "16.18.121",
     "@types/supertest": "2.0.16",
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.21.0",
@@ -59,7 +59,7 @@
     "jest-junit": "16.0.0",
     "koa": "2.15.3",
     "koa-bodyparser": "4.4.1",
-    "prettier": "3.3.3",
+    "prettier": "3.4.2",
     "supertest": "6.3.4",
     "ts-jest": "29.2.5",
     "ts-node": "10.9.2",
@@ -71,6 +71,6 @@
   },
   "volta": {
     "node": "20.18.1",
-    "npm": "10.9.1"
+    "npm": "10.9.2"
   }
 }
