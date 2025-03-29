@@ -60,7 +60,7 @@
     "koa": "2.16.0",
     "koa-bodyparser": "4.4.1",
     "prettier": "3.5.3",
-    "supertest": "6.3.4",
+    "supertest": "7.1.0",
     "ts-jest": "29.3.0",
     "ts-node": "10.9.2",
     "typescript": "5.8.2"
