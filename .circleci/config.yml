@@ -78,7 +78,6 @@ workflows:
           matrix:
             parameters:
               node-version:
-                - "20"
                 - "22"
                 - "24"
       - Full incremental delivery tests with graphql-js 17 canary
