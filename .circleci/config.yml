@@ -42,7 +42,7 @@ jobs:
       INCREMENTAL_DELIVERY_TESTS_ENABLED: t
     steps:
       - setup-node:
-          node-version: "18"
+          node-version: "22"
       - run: pnpm add --legacy-peer-deps graphql@17.0.0-alpha.1.canary.pr.3361.04ab27334641e170ce0e05bc927b972991953882
       - run: pnpm run test:ci
       - store_test_results:
