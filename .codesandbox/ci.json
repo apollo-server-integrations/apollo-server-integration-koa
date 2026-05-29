@@ -1,4 +1,4 @@
 {
   "sandboxes": ["apollo-server-koa-js", "apollo-server-koa-ts"],
-  "node": "22"
+  "node": "20"
 }
