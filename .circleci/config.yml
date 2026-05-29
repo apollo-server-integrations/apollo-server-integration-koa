@@ -4,31 +4,24 @@ orbs:
   node: circleci/node@5.3.0
 
 commands:
-  install-volta:
-    description: Install volta to manage Node/npm versions
-    steps:
-      - run:
-          name: Install volta
-          # Teach the volta installer to update Circle's special env
-          # file instead of the default.
-          command: |
-            curl https://get.volta.sh | PROFILE="$BASH_ENV" bash
-
   setup-node:
     parameters:
       node-version:
         type: string
-        default: ''
+        default: ""
     steps:
-      - install-volta
       - checkout
       - when:
           condition: << parameters.node-version >>
           steps:
-          - run: volta pin node@<< parameters.node-version >>
+            - node/install:
+                node-version: << parameters.node-version >>
+      - run:
+          name: Enable corepack
+          command: corepack enable
       - run: node --version
-      - run: npm --version
-      - node/install-packages
+      - run: pnpm --version
+      - run: pnpm install --frozen-lockfile
 
 jobs:
   NodeJS:
@@ -36,52 +29,48 @@ jobs:
       node-version:
         type: string
     docker:
-    - image: cimg/base:stable
+      - image: cimg/base:stable
     steps:
       - setup-node:
           node-version: <<parameters.node-version>>
-      - run: npm run build
-      - run: npm run test:ci
+      - run: pnpm run build
+      - run: pnpm run test:ci
       - store_test_results:
           path: junit.xml
 
   Full incremental delivery tests with graphql-js 17 canary:
     docker:
-    - image: cimg/base:stable
+      - image: cimg/base:stable
     environment:
       INCREMENTAL_DELIVERY_TESTS_ENABLED: t
     steps:
       - setup-node:
           node-version: "18"
-      # Install a prerelease of graphql-js 17 with incremental delivery support.
-      # --legacy-peer-deps because nothing expects v17 yet.
-      # --no-engine-strict because Node v18 doesn't match the engines fields
-      # on some old stuff.
-      - run: npm i --legacy-peer-deps --no-engine-strict graphql@17.0.0-alpha.1.canary.pr.3361.04ab27334641e170ce0e05bc927b972991953882
-      - run: npm run test:ci
+      - run: pnpm add --legacy-peer-deps graphql@17.0.0-alpha.1.canary.pr.3361.04ab27334641e170ce0e05bc927b972991953882
+      - run: pnpm run test:ci
       - store_test_results:
           path: junit.xml
 
   Prettier:
     docker:
-    - image: cimg/base:stable
+      - image: cimg/base:stable
     steps:
       - setup-node
-      - run: npm run prettier-check
+      - run: pnpm run fmt:check
 
   Lint:
     docker:
-    - image: cimg/base:stable
+      - image: cimg/base:stable
     steps:
       - setup-node
-      - run: npm run lint
+      - run: pnpm run lint
 
   Spell Check:
     docker:
-    - image: cimg/base:stable
+      - image: cimg/base:stable
     steps:
       - setup-node
-      - run: npm run spell-check
+      - run: pnpm run spell-check
 
 workflows:
   version: 2
@@ -92,9 +81,9 @@ workflows:
           matrix:
             parameters:
               node-version:
-                - "16"
-                - "18"
                 - "20"
+                - "22"
+                - "24"
       - Full incremental delivery tests with graphql-js 17 canary
       - Prettier
       - Lint
