@@ -48,7 +48,7 @@ jobs:
       - store_test_results:
           path: junit.xml
 
-  Prettier:
+  Oxfmt:
     docker:
       - image: cimg/base:stable
     steps:

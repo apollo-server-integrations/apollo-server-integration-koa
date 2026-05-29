@@ -1,6 +1,5 @@
 import { Readable } from 'node:stream';
 import { parse } from 'node:url';
-import type { WithRequired } from '@apollo/utils.withrequired';
 import {
   type ApolloServer,
   type BaseContext,
@@ -41,10 +40,8 @@ export function koaMiddleware<
   ContextT = Koa.DefaultContext,
 >(
   server: ApolloServer<TContext>,
-  options: WithRequired<
-    KoaMiddlewareOptions<TContext, StateT, ContextT>,
-    'context'
-  >,
+  options: KoaMiddlewareOptions<TContext, StateT, ContextT> &
+    Required<Pick<KoaMiddlewareOptions<TContext, StateT, ContextT>, 'context'>>,
 ): Koa.Middleware<StateT, ContextT>;
 export function koaMiddleware<
   TContext extends BaseContext,
