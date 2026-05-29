@@ -8,14 +8,11 @@ commands:
     parameters:
       node-version:
         type: string
-        default: ""
+        default: "lts"
     steps:
       - checkout
-      - when:
-          condition: << parameters.node-version >>
-          steps:
-            - node/install:
-                node-version: << parameters.node-version >>
+      - node/install:
+          node-version: << parameters.node-version >>
       - run:
           name: Enable corepack
           command: corepack enable
