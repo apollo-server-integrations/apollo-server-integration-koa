@@ -1,0 +1,4 @@
+allowBuilds:
+  '@apollo/protobufjs': true
+minimumReleaseAge: 4320
+pmOnFail: error

@@ -28,8 +28,8 @@
     "build": "tsc --build tsconfig.build.json",
     "clean": "git clean -dfqX",
     "prepack": "npm run build",
-    "prettier-check": "prettier --check .",
-    "prettier-fix": "prettier --write .",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
     "publish-changeset": "changeset publish",
     "spell-check": "cspell lint '**' --no-progress || (echo 'Add any real words to cspell-dict.txt.'; exit 1)",
     "test": "jest",
@@ -46,8 +46,8 @@
     "@koa/cors": "4.0.0",
     "@types/jest": "29.5.14",
     "@types/koa": "2.15.0",
-    "@types/koa__cors": "4.0.3",
     "@types/koa-bodyparser": "4.3.12",
+    "@types/koa__cors": "4.0.3",
     "@types/node": "16.18.126",
     "@types/supertest": "2.0.16",
     "@typescript-eslint/eslint-plugin": "6.21.0",
@@ -59,7 +59,7 @@
     "jest-junit": "16.0.0",
     "koa": "2.16.0",
     "koa-bodyparser": "4.4.1",
-    "prettier": "3.5.3",
+    "oxfmt": "^0.52.0",
     "supertest": "6.3.4",
     "ts-jest": "29.3.0",
     "ts-node": "10.9.2",
@@ -69,8 +69,5 @@
     "@apollo/server": "^4.0.0",
     "koa": "^2.0.0"
   },
-  "volta": {
-    "node": "20.19.0",
-    "npm": "10.9.2"
-  }
+  "packageManager": "pnpm@11.4.0"
 }
