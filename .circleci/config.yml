@@ -14,8 +14,8 @@ commands:
       - node/install:
           node-version: << parameters.node-version >>
       - run:
-          name: Enable corepack
-          command: corepack enable
+          name: Enable pnpm
+          command: corepack enable pnpm
       - run: node --version
       - run: pnpm --version
       - run: pnpm install --frozen-lockfile
