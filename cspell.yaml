@@ -6,7 +6,7 @@
 # cspell-dict.txt, one per line.
 dictionaryDefinitions:
   - name: workspace
-    path: './cspell-dict.txt'
+    path: "./cspell-dict.txt"
     description: Custom Workspace Dictionary
     addWords: true
     scope: workspace
@@ -20,6 +20,8 @@ useGitignore: true
 ignorePaths:
   - cspell.yaml
   - .changeset/**/*
+  - pnpm-workspace.yaml
+  - pnpm-lock.yaml
 
 ignoreRegExpList:
   # GitHub Security Advisories
@@ -27,10 +29,10 @@ ignoreRegExpList:
 
 overrides:
   # Ignore anything in a changelog file that looks like a GitHub username.
-  - filename: '**/CHANGELOG.md'
+  - filename: "**/CHANGELOG.md"
     ignoreRegExpList:
       - "@[-\\w]+"
   # Ignore the targets of links in Markdown/MDX files.
-  - filename: '**/*.md*'
+  - filename: "**/*.md*"
     ignoreRegExpList:
       - "\\]\\([^)]+\\)"
