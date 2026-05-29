@@ -48,7 +48,7 @@ jobs:
       - store_test_results:
           path: junit.xml
 
-  Oxfmt:
+  Prettier:
     docker:
       - image: cimg/base:stable
     steps:
@@ -82,6 +82,6 @@ workflows:
                 - "22"
                 - "24"
       - Full incremental delivery tests with graphql-js 17 canary
-      - Oxfmt
+      - Prettier
       - Lint
       - Spell Check
