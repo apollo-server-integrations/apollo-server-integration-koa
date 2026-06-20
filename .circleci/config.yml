@@ -53,9 +53,9 @@ jobs:
     steps:
       - setup-node:
           node-version: "22"
-      # Install graphql-js 17 with incremental delivery support.
-      # on some old stuff.
-      - run: npm i graphql@17.0.1
+      # Install a prerelease of graphql-js 17 with incremental delivery support.
+      # --legacy-peer-deps because nothing expects v17 yet.
+      - run: npm i --legacy-peer-deps graphql@17.0.0-alpha.9 @yaacovcr/transform@0.0.8
       - run: npm run test:ci
       - store_test_results:
           path: junit.xml
