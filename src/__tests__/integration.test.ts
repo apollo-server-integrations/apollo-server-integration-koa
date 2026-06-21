@@ -1,6 +1,6 @@
 import http from 'http';
 import Koa from 'koa';
-import bodyParser from 'koa-bodyparser';
+import bodyParser from '@koa/bodyparser';
 import cors from '@koa/cors';
 import {
   type ApolloServerOptions,
