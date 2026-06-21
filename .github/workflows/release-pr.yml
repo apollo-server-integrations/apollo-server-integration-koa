@@ -26,12 +26,12 @@ jobs:
           node-version: 24.x
 
       - name: Install Dependencies
-        run: npm i
+        run: pnpm install
 
       - name: Create Release Pull Request / NPM Publish
         uses: changesets/action@v1
         with:
-          publish: npm run publish-changeset
+          publish: pnpm publish-changeset
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ""
