@@ -20,7 +20,6 @@ commands:
             npm install --global corepack@latest
             corepack enable
             corepack prepare pnpm --activate
-            pnpm config set store-dir .pnpm-store
       - node/install-packages:
           pkg-manager: pnpm
 
