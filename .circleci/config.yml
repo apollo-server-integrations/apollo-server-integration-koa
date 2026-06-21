@@ -15,6 +15,7 @@ commands:
           node-version: << parameters.node-version >>
           install-pnpm: true
       - run: node --version
+      - run: pnpm --version
       - node/install-packages:
           pkg-manager: pnpm
 
