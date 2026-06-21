@@ -13,13 +13,8 @@ commands:
       - checkout
       - node/install:
           node-version: << parameters.node-version >>
+          install-pnpm: true
       - run: node --version
-      - run:
-          name: Install pnpm package manager
-          command: |
-            npm install --global corepack@latest
-            corepack enable
-            corepack prepare pnpm --activate
       - node/install-packages:
           pkg-manager: pnpm
 
