@@ -1,0 +1,8 @@
+allowBuilds:
+  '@apollo/protobufjs': true
+minimumReleaseAgeExclude:
+  - '@types/node@22.20.0'
+minimumReleaseAge: 4320
+publicHoistPattern:
+  - '@apollo/utils.withrequired'
+  - '@jest/types'

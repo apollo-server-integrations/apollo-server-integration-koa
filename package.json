@@ -27,7 +27,7 @@
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
     "clean": "git clean -dfqX",
-    "prepack": "npm run build",
+    "prepack": "pnpm build",
     "prettier-check": "prettier --check .",
     "prettier-fix": "prettier --write .",
     "publish-changeset": "changeset publish",
@@ -59,7 +59,7 @@
     "jest-junit": "16.0.0",
     "koa": "2.16.0",
     "koa-bodyparser": "4.4.1",
-    "prettier": "3.5.3",
+    "prettier": "3.8.4",
     "supertest": "6.3.4",
     "ts-jest": "29.3.0",
     "ts-node": "10.9.2",
@@ -69,8 +69,11 @@
     "@apollo/server": "^5.0.0",
     "koa": "^2.0.0"
   },
-  "volta": {
-    "node": "20.19.0",
-    "npm": "10.9.2"
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.8.0",
+      "onFail": "error"
+    }
   }
 }
