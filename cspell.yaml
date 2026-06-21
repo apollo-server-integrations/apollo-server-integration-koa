@@ -20,6 +20,9 @@ useGitignore: true
 ignorePaths:
   - cspell.yaml
   - .changeset/**/*
+  - .pnpm-store/**/*
+  - pnpm-lock.yaml
+  - pnpm-workspace.yaml
 
 ignoreRegExpList:
   # GitHub Security Advisories

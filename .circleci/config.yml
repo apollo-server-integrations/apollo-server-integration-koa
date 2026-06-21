@@ -48,7 +48,7 @@ jobs:
           node-version: "22"
       # Install a prerelease of graphql-js 17 with incremental delivery support.
       # --legacy-peer-deps because nothing expects v17 yet.
-      - run: pnpm add --frozen-lockfile=false graphql@17.0.0-alpha.9 @yaacovcr/transform@0.0.8
+      - run: pnpm add graphql@17.0.0-alpha.9 @yaacovcr/transform@0.0.8
       - run: pnpm test:ci
       - store_test_results:
           path: junit.xml
