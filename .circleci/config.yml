@@ -4,28 +4,15 @@ orbs:
   node: circleci/node@5.3.0
 
 commands:
-  install-volta:
-    description: Install volta to manage Node/npm versions
-    steps:
-      - run:
-          name: Install volta
-          # Teach the volta installer to update Circle's special env
-          # file instead of the default.
-          command: |
-            curl https://get.volta.sh | PROFILE="$BASH_ENV" bash
-
   setup-node:
     parameters:
       node-version:
         type: string
         default: ''
     steps:
-      - install-volta
       - checkout
-      - when:
-          condition: << parameters.node-version >>
-          steps:
-          - run: volta pin node@<< parameters.node-version >>
+      - node/install:
+          node-version: << parameters.node-version >>
       - run: node --version
       - run: npm --version
       - node/install-packages
@@ -40,8 +27,8 @@ jobs:
     steps:
       - setup-node:
           node-version: <<parameters.node-version>>
-      - run: npm run build
-      - run: npm run test:ci
+      - run: pnpm build
+      - run: pnpm test:ci
       - store_test_results:
           path: junit.xml
 
@@ -55,8 +42,8 @@ jobs:
           node-version: "22"
       # Install a prerelease of graphql-js 17 with incremental delivery support.
       # --legacy-peer-deps because nothing expects v17 yet.
-      - run: npm i --legacy-peer-deps graphql@17.0.0-alpha.9 @yaacovcr/transform@0.0.8
-      - run: npm run test:ci
+      - run: pnpm add --frozen-lockfile=false graphql@17.0.0-alpha.9 @yaacovcr/transform@0.0.8
+      - run: pnpm test:ci
       - store_test_results:
           path: junit.xml
 
@@ -65,21 +52,21 @@ jobs:
     - image: cimg/base:stable
     steps:
       - setup-node
-      - run: npm run prettier-check
+      - run: pnpm prettier-check
 
   Lint:
     docker:
     - image: cimg/base:stable
     steps:
       - setup-node
-      - run: npm run lint
+      - run: pnpm lint
 
   Spell Check:
     docker:
     - image: cimg/base:stable
     steps:
       - setup-node
-      - run: npm run spell-check
+      - run: pnpm spell-check
 
 workflows:
   version: 2
