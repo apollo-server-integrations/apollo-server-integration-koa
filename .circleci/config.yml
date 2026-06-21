@@ -14,7 +14,6 @@ commands:
       - node/install:
           node-version: << parameters.node-version >>
       - run: node --version
-      - run: npm --version
       - node/install-packages
 
 jobs:
