@@ -1,5 +1,6 @@
 allowBuilds:
   '@apollo/protobufjs': true
+  unrs-resolver: true
 minimumReleaseAgeExclude:
   - '@types/node@22.20.0'
 minimumReleaseAge: 4320

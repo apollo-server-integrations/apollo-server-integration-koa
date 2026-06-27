@@ -42,6 +42,6 @@ it('calls middlewares defined after koaMiddleware', async () => {
   });
 
   await request(app.callback()).post('/').send({ query: '{f}' }).expect(200);
-  expect(spy).toBeCalled();
+  expect(spy).toHaveBeenCalled();
   await server.stop();
 });
