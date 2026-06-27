@@ -54,7 +54,7 @@ jobs:
     - image: cimg/base:stable
     steps:
       - setup-node
-      - run: pnpm prettier-check
+      - run: pnpm oxfmt-check
 
   Lint:
     docker:
