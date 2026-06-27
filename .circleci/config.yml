@@ -13,8 +13,8 @@ commands:
       - checkout
       - node/install:
           node-version: << parameters.node-version >>
-          install-pnpm:
-            version: 11.8.0
+          install-pnpm: true
+          pnpm-version: 11.8.0
       - run: node --version
       - run: pnpm --version
       - node/install-packages:
