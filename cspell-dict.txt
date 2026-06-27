@@ -10,3 +10,5 @@ bodyparser
 testsuite
 withrequired
 effectful
+oxlint
+oxfmt

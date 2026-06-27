@@ -1,0 +1,18 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "trailingComma": "all",
+  "singleQuote": true,
+  "printWidth": 80,
+  "sortPackageJson": false,
+  "ignorePatterns": [
+    "*.json",
+    "*.json5",
+    "*.yml",
+    "*.md",
+    "dist/",
+    ".volta",
+    ".pnpm-store",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml"
+  ]
+}
