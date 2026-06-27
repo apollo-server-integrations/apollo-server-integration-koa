@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 2.0.0
+
+### Major Changes
+
+- [#245](https://github.com/apollo-server-integrations/apollo-server-integration-koa/pull/245) [`700bcc8`](https://github.com/apollo-server-integrations/apollo-server-integration-koa/commit/700bcc8374d008b068ad7c55281057fb8fe80630) Thanks [@renovate](https://github.com/apps/renovate)! - Drop support for Apollo Server 4, Koa 2, and Node.js < 22. Require Apollo Server 5, Koa 3 and Node.js >= 22.
+
+### Minor Changes
+
+- [#238](https://github.com/apollo-server-integrations/apollo-server-integration-koa/pull/238) [`5259b91`](https://github.com/apollo-server-integrations/apollo-server-integration-koa/commit/5259b911e280b6c16d63f78cffe181eb1ee5e930) Thanks [@renovate](https://github.com/apps/renovate)! - Call `.next()` after Koa Middleware
+
 ## 1.1.1
 
 ### Patch Changes
@@ -25,7 +35,7 @@
     //...
     {
       context: async ({ ctx }) => ({ graphqlContext: {} }),
-    },
+    }
   );
   ```
 
@@ -36,7 +46,7 @@
   type KoaContext = { context: object };
 
   koaMiddleware<KoaState, KoaContext>(
-    new ApolloServer<GraphQLContext>(),
+    new ApolloServer<GraphQLContext>()
     //...
   );
   ```
