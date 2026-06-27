@@ -16,6 +16,7 @@
     "noImplicitOverride": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedParameters": true,
+    "isolatedModules": true,
     "noUnusedLocals": true,
     "forceConsistentCasingInFileNames": true,
     "lib": ["es2023"],
