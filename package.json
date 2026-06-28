@@ -66,11 +66,5 @@
     "@apollo/server": "^5.0.0",
     "koa": "^3.0.0"
   },
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "11.8.0",
-      "onFail": "error"
-    }
-  }
+  "packageManager": "pnpm@11.8.0"
 }
