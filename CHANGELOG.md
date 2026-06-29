@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2.0.1
+
+### Patch Changes
+
+- [#258](https://github.com/apollo-server-integrations/apollo-server-integration-koa/pull/258) [`e309e7c`](https://github.com/apollo-server-integrations/apollo-server-integration-koa/commit/e309e7cc9998c2cdacf21daaab4e70affaccac44) Thanks [@samchungy](https://github.com/samchungy)! - Update koa-bodyparser references to @koa/bodyparser
+
 ## 2.0.0
 
 ### Major Changes
