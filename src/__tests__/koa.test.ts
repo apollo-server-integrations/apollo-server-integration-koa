@@ -16,7 +16,7 @@ it('gives helpful error if body-parser middleware is not installed', async () =>
   await request(app.callback())
     .post('/')
     .send({ query: '{hello}' })
-    .expect(500, /forgot to set up the `koa-bodyparser`/);
+    .expect(500, /forgot to set up the `@koa\/bodyparser`/);
   await server.stop();
 });
 
