@@ -55,8 +55,8 @@
     "jest": "30.4.2",
     "jest-junit": "17.0.0",
     "koa": "3.2.1",
-    "oxfmt": "0.60.0",
-    "oxlint": "1.75.0",
+    "oxfmt": "0.61.0",
+    "oxlint": "1.76.0",
     "supertest": "7.2.2",
     "ts-jest": "29.4.12",
     "ts-node": "10.9.2",
@@ -66,5 +66,5 @@
     "@apollo/server": "^5.0.0",
     "koa": "^3.0.0"
   },
-  "packageManager": "pnpm@11.17.0"
+  "packageManager": "pnpm@11.18.0"
 }
