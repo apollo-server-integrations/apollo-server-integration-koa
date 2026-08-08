@@ -8,6 +8,9 @@
     "type": "git",
     "url": "git+https://github.com/apollo-server-integrations/apollo-server-integration-koa.git"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "GraphQL",
     "Apollo",
