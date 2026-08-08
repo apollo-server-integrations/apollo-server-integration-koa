@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 3.0.0
+
+### Major Changes
+
+- [#266](https://github.com/apollo-server-integrations/apollo-server-integration-koa/pull/266) [`173ccd4`](https://github.com/apollo-server-integrations/apollo-server-integration-koa/commit/173ccd4b8a5849da36887b3421b4a58a6749e270) Thanks [@samchungy](https://github.com/samchungy)! - This package is now ESM-only
+
+### Patch Changes
+
+- [#258](https://github.com/apollo-server-integrations/apollo-server-integration-koa/pull/258) [`e309e7c`](https://github.com/apollo-server-integrations/apollo-server-integration-koa/commit/e309e7cc9998c2cdacf21daaab4e70affaccac44) Thanks [@samchungy](https://github.com/samchungy)! - Update koa-bodyparser references to @koa/bodyparser
+
 ## 2.0.0
 
 ### Major Changes
