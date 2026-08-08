@@ -8,6 +8,9 @@
     "type": "git",
     "url": "git+https://github.com/apollo-server-integrations/apollo-server-integration-koa.git"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "GraphQL",
     "Apollo",
@@ -19,8 +22,15 @@
   "bugs": {
     "url": "https://github.com/apollo-server-integrations/apollo-server-integration-koa/issues"
   },
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
   "engines": {
     "node": ">=22"
   },
@@ -32,8 +42,8 @@
     "oxfmt-fix": "oxfmt --write .",
     "publish-changeset": "changeset publish",
     "spell-check": "cspell lint '**' --no-progress || (echo 'Add any real words to cspell-dict.txt.'; exit 1)",
-    "test": "jest",
-    "test:ci": "jest --coverage --ci --maxWorkers=2 --reporters=default --reporters=jest-junit",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:ci": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage --ci --maxWorkers=2 --reporters=default --reporters=jest-junit",
     "watch": "tsc --build --watch",
     "lint": "oxlint"
   },

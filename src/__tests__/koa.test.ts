@@ -1,9 +1,9 @@
 import { ApolloServer } from '@apollo/server';
 import koa from 'koa';
 import request from 'supertest';
-import { it, expect } from '@jest/globals';
+import { it, expect, jest } from '@jest/globals';
 import { bodyParser } from '@koa/bodyparser';
-import { koaMiddleware } from '..';
+import { koaMiddleware } from '../index.js';
 
 it('gives helpful error if body-parser middleware is not installed', async () => {
   const server = new ApolloServer({ typeDefs: 'type Query {f: ID}' });

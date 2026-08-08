@@ -10,8 +10,8 @@ import {
 import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer';
 import type { CreateServerForIntegrationTestsOptions } from '@apollo/server-integration-testsuite';
 import { defineIntegrationTestSuite } from '@apollo/server-integration-testsuite';
-import { koaMiddleware } from '..';
-import { urlForHttpServer } from '../utils';
+import { koaMiddleware } from '../index.js';
+import { urlForHttpServer } from '../utils.js';
 
 defineIntegrationTestSuite(async function (
   serverOptions: ApolloServerOptions<BaseContext>,
