@@ -76,5 +76,5 @@
     "@apollo/server": "^5.0.0",
     "koa": "^3.0.0"
   },
-  "packageManager": "pnpm@11.20.0"
+  "packageManager": "pnpm@11.21.0"
 }
